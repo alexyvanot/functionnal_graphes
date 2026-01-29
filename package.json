@@ -9,20 +9,28 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "ui": "vitest --ui --open"
+    "ui": "vitest --ui --open",
+    "demo": "vite"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@types/cytoscape": "^3.21.9",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.1.0",
+    "@vitejs/plugin-vue": "^6.0.3",
     "@vitest/ui": "^4.0.18",
     "jest": "^30.2.0",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.18"
+    "vite": "^7.3.1",
+    "vitest": "^4.0.18",
+    "vue": "^3.5.27"
+  },
+  "dependencies": {
+    "cytoscape": "^3.33.1"
   }
 }

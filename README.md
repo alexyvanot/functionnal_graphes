@@ -1,6 +1,12 @@
 # Functional Programming - Graph Exploration
 
+[![Tests](https://github.com/alexyvanot/functionnal_graphes/actions/workflows/tests.yml/badge.svg)](https://github.com/alexyvanot/functionnal_graphes/actions/workflows/tests.yml)
+
 A TypeScript project made for my studies, exploring graph traversals (DFS/BFS) in a **strictly functional** style.
+
+<div align="center">
+  <img src="./demo/Assets/Images/demo.gif" alt="Graph Exploration Demo" width="600"/> 
+</div>
 
 ## Constraints
 
@@ -26,8 +32,28 @@ npm run test:watch
 # Coverage report
 npm run test:coverage
 
-# Interactive UI
-npm run ui
+# Interactive Demo
+npm run demo
+```
+
+## Interactive Demo
+
+A Vue.js + Cytoscape.js visualization app to explore the algorithms step-by-step.
+
+**Features:**
+- 🎨 5 predefined graphs (Simple, Complex, Disconnected, Tree, Unreachable)
+- 🔄 DFS and BFS visualization
+- ⏯️ Play/Pause animation with speed control
+- 🐛 Step-by-step debugger (forward/backward navigation)
+- 🎯 Color-coded node states:
+  - 🟢 Green = Visited
+  - 🔵 Blue = In Queue (BFS)
+  - 🟠 Orange border = Currently processing
+  - ⬛ Black = Final path
+
+```bash
+npm run demo
+# Opens at http://localhost:3000
 ```
 
 ## Structure
@@ -43,7 +69,7 @@ npm run ui
 
 ## Tests
 
-Tests verify both correctness **AND** functional constraints compliance (no loops, no if/else, etc.).
+128 tests with 100% coverage. Tests verify both correctness **AND** functional constraints compliance (no loops, no if/else, etc.).
 
 ```bash
 npm test
