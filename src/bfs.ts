@@ -80,7 +80,7 @@ export const shortestPathBFS = (
           // si on a trouvé la cible, retourner les parents
           return n === target
             ? parents
-            // sinon, marquer visité, save parents des voisins, enfiler voisins à LA FIN
+            // sinon, marquer visité, save parents des voisins, enfiler voisins a LA FIN
             : (() => {
                 const neighborIds = extractNodeIds(neighbors(g, n));
                 const { newChildren, newParents } = processNeighbors(neighborIds, n, parents);
