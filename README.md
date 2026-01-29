@@ -1,7 +1,5 @@
 # Functional Programming - Graph Exploration
 
-[![Tests](https://github.com/alexyvanot/functionnal_graphes/actions/workflows/tests.yml/badge.svg)](https://github.com/alexyvanot/functionnal_graphes/actions/workflows/tests.yml)
-
 A TypeScript project made for my studies, exploring graph traversals (DFS/BFS) in a **strictly functional** style.
 
 <div align="center">
