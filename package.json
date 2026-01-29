@@ -4,13 +4,15 @@
   "description": "TP Programmation Fonctionnelle - Exploration de graphe",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "vite build",
+    "build:ts": "tsc",
     "start": "ts-node src/index.ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "ui": "vitest --ui --open",
-    "demo": "vite"
+    "demo": "vite",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
