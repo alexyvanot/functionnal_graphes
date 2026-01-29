@@ -1,46 +1,49 @@
-# Programmation Fonctionnelle - Exploration de Graphes
+# Functional Programming - Graph Exploration
 
-TP réalisé dans le cadre de mes études en TypeScript, explorant les parcours de graphes (DFS/BFS) en style **strictement fonctionnel**.
+A TypeScript project made for my studies, exploring graph traversals (DFS/BFS) in a **strictly functional** style.
 
-## Contraintes respectées
+## Constraints
 
-- ❌ Aucune boucle (`for`, `while`, `forEach`)
-- ❌ Aucun `map` / `filter` / `reduce`
-- ❌ Aucune mutation (`push`, `pop`, etc.)
-- ❌ Aucun `if` / `else` (uniquement ternaires)
-- ✅ Récursivité uniquement
-- ✅ Fonctions pures
+- ❌ No loops (`for`, `while`, `forEach`)
+- ❌ No `map` / `filter` / `reduce`
+- ❌ No mutations (`push`, `pop`, etc.)
+- ❌ No `if` / `else` (ternary only)
+- ✅ Recursion only
+- ✅ Pure functions
 
 ## Getting Started
 
 ```bash
-# Installation
+# Install
 npm install
 
-# Lancer les tests
+# Run tests
 npm test
 
-# Tests en mode watch
+# Watch mode
 npm run test:watch
 
-# Couverture de code
+# Coverage report
 npm run test:coverage
+
+# Interactive UI
+npm run ui
 ```
 
 ## Structure
 
-| Question | Fichier | Description |
-|----------|---------|-------------|
-| Q1 | `src/list-utils.ts` | Utilitaires fonctionnels sur les listes |
-| Q2 | `src/visited.ts` | Gestion des noeuds visités (cycles) |
-| Q3 | `src/dfs.ts` | Atteignabilité par DFS |
-| Q4 | `src/parent.ts` | Table des parents + reconstruction de chemin |
-| Q5 | `src/dfs.ts` | Trouver un chemin par DFS |
-| Q6 | `src/bfs.ts` | Plus court chemin par BFS |
+| Question | File | Description |
+|----------|------|-------------|
+| Q1 | `src/list-utils.ts` | Functional list utilities |
+| Q2 | `src/visited.ts` | Visited nodes management (cycles) |
+| Q3 | `src/dfs.ts` | DFS reachability |
+| Q4 | `src/parent.ts` | Parent map + path reconstruction |
+| Q5 | `src/dfs.ts` | Find a path with DFS |
+| Q6 | `src/bfs.ts` | Shortest path with BFS |
 
 ## Tests
 
-Les tests vérifient à la fois le bon fonctionnement **ET** le respect des contraintes fonctionnelles (pas de boucles, pas de if/else, etc.).
+Tests verify both correctness **AND** functional constraints compliance (no loops, no if/else, etc.).
 
 ```bash
 npm test
