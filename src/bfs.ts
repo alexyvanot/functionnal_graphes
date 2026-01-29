@@ -80,20 +80,17 @@ export const shortestPathBFS = (
           // si on a trouvé la cible, retourner les parents
           return n === target
             ? parents
-            // si deja visité, on ignore et continue
-            : hasVisited(visited, n)
-              ? go(rest, visited, parents)
-              // sinon, marquer visité, save parents des voisins, enfiler voisins que a LA FIN
-              : (() => {
-                  const neighborIds = extractNodeIds(neighbors(g, n));
-                  const { newChildren, newParents } = processNeighbors(neighborIds, n, parents);
-                  // BFS: enfiler a la fin (FIFO) avec concat(rest, newChildren)
-                  return go(
-                    concat(rest, newChildren),
-                    markVisited(visited, n),
-                    newParents
-                  );
-                })();
+            // sinon, marquer visité, save parents des voisins, enfiler voisins à LA FIN
+            : (() => {
+                const neighborIds = extractNodeIds(neighbors(g, n));
+                const { newChildren, newParents } = processNeighbors(neighborIds, n, parents);
+                // BFS: enfiler a la fin (FIFO) avec concat(rest, newChildren)
+                return go(
+                  concat(rest, newChildren),
+                  markVisited(visited, n),
+                  newParents
+                );
+              })();
         })();
   };
   

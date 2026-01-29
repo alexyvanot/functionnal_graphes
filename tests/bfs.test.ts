@@ -209,4 +209,30 @@ describe('Q6 - Plus court chemin par BFS', () => {
     });
   });
 
+  describe('Couverture branche visited', () => {
+    // Graphe où un noeud peut être ajouté plusieurs fois à la queue
+    // avant d'être visité (pour couvrir la branche hasVisited)
+    //   A -> B -> C
+    //   |         ^
+    //   +-> D ----+
+    // B et D pointent tous les deux vers C, donc C sera dans la queue 2 fois
+    const graphWithDuplicateInQueue: Graph = {
+      adj: {
+        'A': [{ to: 'B', cost: 1 }, { to: 'D', cost: 1 }],
+        'B': [{ to: 'C', cost: 1 }],
+        'D': [{ to: 'C', cost: 1 }],
+        'C': [{ to: 'E', cost: 1 }],
+        'E': [],
+      }
+    };
+
+    test('gère correctement les noeuds déjà visités dans la queue', () => {
+      const path = shortestPathBFS(graphWithDuplicateInQueue, 'A', 'E');
+      expect(path).not.toBe(null);
+      expect(path!.length).toBe(4); // A -> B -> C -> E ou A -> D -> C -> E
+      expect(path![0]).toBe('A');
+      expect(path![path!.length - 1]).toBe('E');
+    });
+  });
+
 });
